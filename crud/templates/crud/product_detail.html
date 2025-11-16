@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}商品詳細{% endblock %}
+{% block content %}
+    <h1>商品詳細画面</h1>
+
+    <table class="table table-bordered">
+        <tr>
+            <th>商品名</th>
+            <td>{{ product.name }}</td>
+        </tr>
+        <tr>
+            <th>価格</th>
+            <td>{{ product.price }} 円</td>
+        </tr>
+        {% comment %} 必要であれば、他のフィールド（説明など）もここに追加 {% endcomment %}
+    </table>
+
+    <a href="{% url 'list' %}" class="btn btn-secondary">商品一覧に戻る</a>
+    <a href="{% url 'edit' pk=product.pk %}" class="btn btn-primary">この商品を編集する</a>
+
+{% endblock %}
